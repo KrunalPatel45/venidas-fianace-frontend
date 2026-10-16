@@ -8,4 +8,5 @@ export const dashboardApi = {
     api.get('/admin/reports/monthly', {
       params: { month },
     }),
+  society: () => api.get('/society/dashboard'),
 };

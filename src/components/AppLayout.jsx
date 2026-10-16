@@ -14,6 +14,7 @@ import {
   FileBarChart2,
   FileSpreadsheet,
   UserRound,
+  Building2,
 } from 'lucide-react';
 
 import {
@@ -45,9 +46,26 @@ export default function AppLayout() {
   const menuItems = [
     {
       path: dashboardPath,
-      label: t('dashboard'),
+      label: isAdmin
+        ? t('dashboard')
+        : language === 'gu'
+          ? 'મારું ડેશબોર્ડ'
+          : 'My Dashboard',
       icon: LayoutDashboard,
     },
+
+    ...(!isAdmin
+      ? [
+          {
+            path: '/society/dashboard',
+            label:
+              language === 'gu'
+                ? 'સોસાયટી ડેશબોર્ડ'
+                : 'Society Dashboard',
+            icon: Building2,
+          },
+        ]
+      : []),
 
     ...(isAdmin
       ? [

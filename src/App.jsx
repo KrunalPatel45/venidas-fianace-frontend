@@ -15,6 +15,7 @@ import AppLayout from './components/AppLayout';
 import LoginPage from './pages/LoginPage';
 import AdminDashboard from './pages/AdminDashboard';
 import MemberDashboard from './pages/MemberDashboard';
+import SocietyDashboardPage from './pages/SocietyDashboardPage';
 import MembersPage from './pages/MembersPage';
 import AccountsPage from './pages/AccountsPage';
 import MonthlyInvestmentsPage from './pages/MonthlyInvestmentsPage';
@@ -42,6 +43,11 @@ export default function App() {
                 <Route
                   path="/my/dashboard"
                   element={<MemberDashboard />}
+                />
+
+                <Route
+                  path="/society/dashboard"
+                  element={<SocietyDashboardPage />}
                 />
 
                 <Route element={<ProtectedRoute adminOnly />}>
